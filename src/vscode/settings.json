@@ -1,0 +1,79 @@
+{
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.accessibilitySupport": "off",
+    "editor.cursorStyle": "line",
+    "editor.fontFamily": "'Myrica M', Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": null,
+    "editor.fontSize": 15,
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "editor.largeFileOptimizations": false,
+    "editor.lineNumbers": "on",
+    "editor.suggestSelection": "first",
+    "editor.tabSize": 2,
+    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+    "editor.wordWrap": "off",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.factorypath": true,
+        "**/.project": true,
+        "**/.settings": true
+    },
+    "files.watcherExclude": {
+        "**/.ammonite": true,
+        "**/.bloop": true,
+        "**/.metals": true
+    },
+    "git.autofetch": true,
+    "git.mergeEditor": true,
+    "settingsSync.ignoredExtensions": [],
+    "terminal.integrated.shellIntegration.enabled": true,
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "window.commandCenter": true,
+    "window.openWithoutArgumentsInNewWindow": "on",
+    "window.restoreWindows": "none",
+    "workbench.colorTheme": "Monokai",
+    "workbench.editor.restoreViewState": false,
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.startupEditor": "newUntitledFile",
+    "yaml.customTags": [
+        "!And sequence",
+        "!Equals sequence",
+        "!If sequence",
+        "!Not sequence",
+        "!Or sequence",
+        "!Base64",
+        "!Cidr sequence",
+        "!FindInMap sequence",
+        "!GetAtt",
+        "!GetAZs",
+        "!ImportValue",
+        "!Join sequence",
+        "!Select sequence",
+        "!Split sequence",
+        "!Sub",
+        "!Ref"
+    ],
+    "yaml.schemaStore.enable": false,
+    "yaml.schemas": {
+        "https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json": [
+            "*.cf.yaml",
+            "*.cf.yml",
+            "cfn/*.yaml",
+            "cfn/*.yml",
+            "cloudformation/*.yaml",
+            "cloudformation/*.yml"
+        ]
+    },
+    "workbench.editor.wrapTabs": true,
+    "editor.stickyScroll.enabled": true
+}

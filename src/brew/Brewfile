@@ -1,0 +1,211 @@
+# 前提環境
+# - PythonのPATHが通っている事
+# - XCode CLI Toolがインストール済みである事
+# - MacAppStoreのアプリで予めログインしている事
+# - MacAppStoreのアプリで予め購入済みである事
+
+###################
+# 公式リポジトリ一覧 #
+###################
+
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+
+#############
+# Global設定 #
+#############
+
+cask_args appdir: "~/Applications"
+
+##########################
+# Normal Depens Binaries #
+##########################
+
+####################
+# 第0階層 (依存なし) #
+####################
+
+brew "ca-certificates"
+brew "capstone"
+brew "cmake"
+brew "gdbm"
+brew "gettext"
+brew "gmp"
+brew "gnu-sed"
+brew "go"
+brew "libatomic_ops"
+brew "libpng"
+brew "libtasn1"
+brew "libunistring"
+brew "libusb"
+brew "lua"
+brew "lz4"
+brew "lzo"
+brew "m4"
+brew "mandoc"
+brew "mas"
+brew "mpdecimal"
+brew "nodebrew"
+brew "pcre2"
+brew "pkg-config"
+brew "readline"
+brew "texinfo"
+brew "xz"
+brew "zlib"
+
+########################
+# 第1階層 (第0階層に依存) #
+########################
+
+brew "autoconf" # M4
+brew "bdw-gc" # Libatomic_Ops, Pkg-Config
+brew "docker-compose" # Go
+brew "git" # GetText, Pcre2
+brew "go-md2man" # Go
+brew "isl" # Gmp
+brew "jpeg-turbo" # Cmake
+brew "libcbor" # Cmake
+brew "libidn2" # GetText, LibuniString, Pkg-Config
+brew "libnghttp2" # Pkg-Config
+brew "libtool" # M4
+brew "mpfr" # Gmp, TexInfo
+brew "ncurses" # Pkg-Config
+brew "nettle" # Gmp
+brew "openssl@1.1" # Ca-Certificates
+brew "pixman" # Pkg-Config
+brew "snappy" # Cmake, Pkg-Config
+brew "sqlite" # ReadLine
+
+##########################
+# 第2階層 (第0~1階層に依存) #
+##########################
+
+brew "automake" # AutoConf
+brew "berkeley-db" # OpenSSL
+brew "docker" # Go, Go-MD2Man
+brew "libfido2" # Cmake, LibCbor, ManDoc, OpenSSL, Pkg-Config
+brew "libmpc" # Gmp, Mpfr
+brew "libssh" # Cmake, OpenSSL
+brew "libssh2" # OpenSSL
+brew "p11-kit" # Ca-Certificates, Pkg-Config, LibTasn1
+brew "pyenv" # AutoConf, OpenSSL, Pkg-Config, ReadLine
+brew "tig" # NCurses, ReadLine
+brew "zstd" # Cmake, Lz4, Xz
+
+##########################
+# 第3階層 (第0~2階層に依存) #
+##########################
+
+brew "gcc" # Gmp, Isl, Mpfr, LibMpc, Zstd
+brew "guile" # AutoConf, AutoMake, Bdw-Gc, GetText, Gmp, Gnu-Sed, LibTool, LibuniString, Pkg-Config, ReadLine
+brew "libevent" # AutoConf, AutoMake, LibTool, OpenSSL, Pkg-Config
+brew "libyaml" # AutoConf, AutoMake, LibTool
+brew "oniguruma" # AutoConf, AutoMake, LibTool
+brew "perl" # Berkeley-DB, Gdbm
+brew "ruby-build" # AutoConf, AutoMake, LibTool
+brew "vde" # AutoConf, AutoMake, LibTool
+
+##########################
+# 第4階層 (第0~3階層に依存) #
+##########################
+
+brew "jq" # Oniguruma
+brew "mysql-client" # Cmake, LibEvent, LibFido2, OpenSSL, Pkg-Config, ZLib, Zstd 
+brew "rbenv" # Ruby-Build
+brew "ruby" # LibYAML, OpenSSL, Pkg-Config, ReadLine
+brew "unbound" # LibEvent, LibngHttp2, OpenSSL
+
+##########################
+# 第5階層 (第0~4階層に依存) #
+##########################
+
+brew "gnutls" # Ca-Certificates, Gmp, Guile, Libidn2, Libtasn1, LibuniString, Nettle, P11-Kit, Pkg-Config, Unbound
+
+##########################
+# Python Depens Binaries #
+##########################
+
+#########################################
+# 第0階層 (Normal Depens Binaries に依存) #
+#########################################
+
+brew "python@3.11" # MpDecimal, OpenSSL, Pkg-Config, SqLite, Xz
+
+##################################################
+# 第1階層 (第0階層 + Normal Depens Binaries に依存) #
+##################################################
+
+brew "docutils" # Python@3.11
+brew "ninja" # Python@3.11
+brew "six" # Python@3.11
+
+####################################################
+# 第2階層 (第0~1階層 + Normal Depens Binaries に依存) #
+####################################################
+
+brew "aws-sso-util" # Python@3.11, Six
+brew "meson" # Ninja, Python@3.11
+brew "rust" # Cmake, LibSSH2, Ninja, OpenSSL, Pkg-Config, Python@3.11
+
+####################################################
+# 第3階層 (第0~2階層 + Normal Depens Binaries に依存) #
+####################################################
+
+brew "awscli" # Cmake, DocUtils, Python@3.11, Rust, Six
+brew "glib" # GetText, Meson, Ninja, Pcre2, Pkg-Config
+
+####################################################
+# 第4階層 (第0~3階層 + Normal Depens Binaries に依存) #
+####################################################
+
+brew "libslirp" # GLib, Meson, Ninja, Pkg-Config
+brew "vim" # GetText, Lua, NCurses, Perl, Python@3.11, Ruby
+
+####################################################
+# 第5階層 (第0~4階層 + Normal Depens Binaries に依存) #
+####################################################
+
+brew "qemu" # Capstone, Glib, GnutLs, JPEG-Turbo, LibPNG, LibSSH, LibSlirp, LibTool,
+            # LibUSB, Lzo, Meson, NCurses, NetTle, Ninja, PixMan, Pkg-Config, Snappy,
+            # Vde, Zstd
+
+####################################################
+# 第6階層 (第0~5階層 + Normal Depens Binaries に依存) #
+####################################################
+
+brew "lima" # Go, Qemu
+
+#############
+# Cask 一覧 #
+############
+
+cask "1password"
+cask "alfred"
+cask "chatwork"
+# cask "clipy" # Apple Silicon版未対応
+cask "deepl"
+cask "drawio"
+cask "figma"
+cask "firefox-developer-edition", args: { language: "ja" }
+cask "google-chrome-dev"
+cask "intellij-idea-ce"
+cask "iterm2"
+cask "microsoft-edge"
+cask "postman"
+cask "pycharm-ce"
+cask "session-manager-plugin"
+cask "skitch"
+cask "the-unarchiver"
+cask "visual-studio-code"
+cask "zoom"
+
+#####################
+# Mac App Store 一覧 #
+#####################
+
+mas "Apple Configurator", id: 1037126344
+mas "Microsoft To Do", id: 1274495053
+mas "Parallels Client", id: 600925318
+mas "RunCat", id: 1429033973

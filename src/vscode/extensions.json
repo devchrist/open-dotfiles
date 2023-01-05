@@ -1,0 +1,20 @@
+{
+  "extensions": [
+    "Angular.ng-template",
+    "Arjun.swagger-viewer",
+    "DavidAnson.vscode-markdownlint",
+    "MS-CEINTL.vscode-language-pack-ja",
+    "PKief.material-icon-theme",
+    "bierner.markdown-mermaid",
+    "dbaeumer.vscode-eslint",
+    "eamodio.gitlens",
+    "hediet.vscode-drawio",
+    "huacat.office-theme",
+    "huizhou.githd",
+    "janisdd.vscode-edit-csv",
+    "mhutchie.git-graph",
+    "redhat.vscode-yaml",
+    "vscodevim.vim",
+    "yzhang.markdown-all-in-one"
+  ]
+}
